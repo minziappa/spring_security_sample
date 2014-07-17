@@ -71,7 +71,7 @@
       <location>/htdocs/error/503error.html</location>
     </error-page>
 
-   <welcome-file-list>
+		<welcome-file-list>
       <welcome-file>/</welcome-file>
     </welcome-file-list>
 
