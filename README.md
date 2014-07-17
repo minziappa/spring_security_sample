@@ -42,3 +42,10 @@ Compile & make a War file
 ```
 mvn -U clean package
 ```
+
+## How to test
+Input user id and password on the index page.
+```
+user id : admin (what you want to input)
+password : password (fixed value)
+```
