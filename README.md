@@ -14,7 +14,7 @@ kim_woongjoon@cyberagent.co.jp
 * Tomcat7
 
 ## Get started
-In the Dependencies of a Pom.xml, add the following:
+Add the following the dependencies and the properties in Pom.xml:
 ```
 <properties>
 	<org.springframework.secutiry.version>3.1.4.RELEASE</org.springframework.secutiry.version>
@@ -38,7 +38,7 @@ In the Dependencies of a Pom.xml, add the following:
 ```
 
 ## Deploy
-Compile & make a war file
+Compile & make a War file
 ```
 mvn -U clean package
 ```
