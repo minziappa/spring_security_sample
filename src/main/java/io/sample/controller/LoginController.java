@@ -52,7 +52,7 @@ public class LoginController extends AbstractBaseController {
 	}
 
 	@RequestMapping(value = {"logout.do"})
-	public String logout(ModelMap model, SessionStatus sessionStatus, HttpSession session) throws Exception {
+	public String logout(ModelMap model, SessionStatus sessionStatus) throws Exception {
 
 		SampleModel hadoopModel = new SampleModel();
 		hadoopModel.setNavi("login");
@@ -62,7 +62,7 @@ public class LoginController extends AbstractBaseController {
 
 		model.addAttribute("model", hadoopModel);
 
-		return "index";
+		return "redirect:/sample/index/";
 	}
 
 	@RequestMapping(value = {"denied.do"})

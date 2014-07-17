@@ -7,12 +7,16 @@
 			<div>
 					<table>
 						<tr>
-							<td><h2><a href="/sample/">Welcome to Spring Security Test</a></h2></td>
+							<td><h2><a href="/sample/index/">Welcome to Spring Security Test</a></h2></td>
 							<td></td>
 						</tr>
 						<tr>
 							<td><a href="/sample/admin/admin.do">Admin Page</a></td>
 							<td><a href="/sample/user/user.do">User Page</a></td>
+						</tr>
+						<tr>
+							<td><a href="/sample/auth/logout">logout</a></td>
+							<td></td>
 						</tr>
 					</table>
 			</div>

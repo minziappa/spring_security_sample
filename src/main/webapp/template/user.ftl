@@ -5,7 +5,17 @@
 	<body>
 
 			<div>
-				User Page
+					<table>
+						<tr>
+							<td><h2><a href="/sample/index/">Welcome to Spring Security Test</a></h2></td>
+						</tr>
+						<tr>
+							<td>User Page</td>
+						</tr>
+						<tr>
+							<td><a href="/sample/auth/logout">logout</a></td>
+						</tr>
+					</table>
 			</div>
 
 	</body>

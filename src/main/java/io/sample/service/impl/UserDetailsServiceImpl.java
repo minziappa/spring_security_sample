@@ -29,41 +29,48 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
+	public UserDetails loadUserByUsername(String userid) throws UsernameNotFoundException {
 
-		logger.info("username >> " + username);
+		ExtendUser user = null;
+		
+		try {
+			// Get a user information form DB.
+	
+			// Or Get the true/false from Active Directory
+	
+			// For test
+			UserModel userModel = new UserModel();
+			userModel.setUserId(userid);
+			userModel.setUserPwd(passwordEncoder.encodePassword("password", null));
+			userModel.setUserStatus("2");
 
-		// Get a user information form DB.
-				
-		// Or Get the true/false from Active Directory
+	        Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+	
+	        // For java1.6
+	        switch(Integer.valueOf(userModel.getUserStatus())) {
+	            case 1:
+	                authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+	                authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+	            break;
+	            default:
+	                authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+	            break;
+	        }
+	
+	        boolean enabled = true;
+	        boolean accountNonExpired = true;
+	        boolean credentialsNonExpired = true;
+	        boolean accountNonLocked = true;
+	
+	        // Add a user's the game Id.
+	        user = new ExtendUser(userModel.getUserId(), userModel.getUserPwd(), enabled, 
+	        		accountNonExpired, credentialsNonExpired, accountNonLocked, authorities, userModel);
 
-		// For test
-		UserModel userModel = new UserModel();
-		userModel.setUserName("admin");
-		userModel.setUserPwd("password");
-		userModel.setUserStatus("2");
+			logger.info("userId >> " + userid);
 
-        Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-
-        // For java1.6
-        switch(Integer.valueOf(userModel.getUserStatus())) {
-            case 1:
-                authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-                authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-            break;
-            default:
-                authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-            break;
-        }
-
-        boolean enabled = true;
-        boolean accountNonExpired = true;
-        boolean credentialsNonExpired = true;
-        boolean accountNonLocked = true;
-
-        // Add a user's the game Id.
-        ExtendUser user = new ExtendUser(userModel.getUserId(), userModel.getUserPwd(), enabled, 
-        		accountNonExpired, credentialsNonExpired, accountNonLocked, authorities, userModel);
+		} catch (Exception e) {
+			logger.error("Exception >> ", e);
+		}
 
 		return user;
 	}
