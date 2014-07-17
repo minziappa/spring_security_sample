@@ -34,13 +34,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		logger.info("username >> " + username);
 
 		// Get a user information form DB.
+				
 		// Or Get the true/false from Active Directory
 
 		// For test
 		UserModel userModel = new UserModel();
-		userModel.setUserName("test");
+		userModel.setUserName("admin");
 		userModel.setUserPwd("password");
-		userModel.setUserStatus("1");
+		userModel.setUserStatus("2");
 
         Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 

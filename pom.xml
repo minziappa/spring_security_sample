@@ -75,7 +75,7 @@
 				<directory>${basedir}/src/main/webapp/WEB-INF</directory>
 			</testResource>
 		</testResources>
-		<finalName>sample</finalName>
+		<finalName>ROOT</finalName>
 	</build>
 
 	<dependencies>
