@@ -42,4 +42,3 @@ Compile & make a war file
 ```
 mvn -U clean package
 ```
-* M
