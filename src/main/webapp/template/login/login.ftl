@@ -9,10 +9,10 @@
 					<form action="/sample/j_spring_security_check" name="sform" id="sform" method="POST">
 					<table>
 						<tr>
-							<td>管理者ＩＤ</td><td><input type="text" name="j_username" value="" /></td><td>例)admin</td>
+							<td>user id</td><td><input type="text" name="j_username" value="" /></td><td>例)admin</td>
 						</tr>
 						<tr>
-							<td>パスワード</td><td><input type="password" name="j_password" value="" /></td><td>例)*******</td>
+							<td>password</td><td><input type="password" name="j_password" value="" /></td><td>例)*******</td>
 						</tr>
 						<tr>
 							<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
