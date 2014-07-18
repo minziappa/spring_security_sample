@@ -11,6 +11,12 @@
 	<!-- Configures the @Controller programming model -->
 	<mvc:annotation-driven />
 
+	<!-- This is option for accessing static files
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/img/**" location="/img/" />
+	-->
+
 	<!-- Set The template Path -->
 	<bean id="freemarkerConfig"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
