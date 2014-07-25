@@ -54,13 +54,12 @@ public class LoginController extends AbstractBaseController {
 	@RequestMapping(value = {"logout.do"})
 	public String logout(ModelMap model, SessionStatus sessionStatus) throws Exception {
 
-		SampleModel hadoopModel = new SampleModel();
-		hadoopModel.setNavi("login");
+		SampleModel sampleModel = new SampleModel();
 
 		// Clear data in the session.
 		sessionStatus.isComplete();
 
-		model.addAttribute("model", hadoopModel);
+		model.addAttribute("model", sampleModel);
 
 		return "redirect:/sample/index/";
 	}

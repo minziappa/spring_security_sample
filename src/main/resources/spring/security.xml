@@ -37,9 +37,16 @@
     </beans:bean>
 
 	<authentication-manager>
+		<authentication-provider ref="defaultAuthenticationProvider" />
 		<authentication-provider user-service-ref="userDetailsService">
 			<password-encoder ref="passwordEncoder"/>
 		</authentication-provider>
 	</authentication-manager>
 
+<!-- 
+    <authentication-manager>
+        <authentication-provider ref="defaultAuthenticationProvider" />
+    </authentication-manager>
+ -->
+    
 </beans:beans>
